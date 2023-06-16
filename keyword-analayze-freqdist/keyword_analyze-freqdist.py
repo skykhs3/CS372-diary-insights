@@ -110,5 +110,7 @@ df = pd.read_csv(CSV_PATH)
 tagged_words =[]
 for index, value in enumerate(df[COL_CONTENT]):
     tagged_words= tagged_words+content_word_tokenize(value)
+
+print(FreqDist(tagged_words).most_common(50))
 fdist = dict(FreqDist(tagged_words))
 plot_word_cloud(fdist,"all","word_cloud_all.png")
